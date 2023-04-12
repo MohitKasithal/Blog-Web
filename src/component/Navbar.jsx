@@ -1,10 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
   const user = true;
-
   return (
     <div className="top">
       <div className="topLeft">
@@ -12,23 +10,32 @@ export default function Navbar() {
       </div>
       <div className="topCenter">
         <ul className="topList">
-          '<li className="topListItem">HOME</li>
+          <li className="topListItem">
+            <Link className="link" to="/">
+              HOME
+            </Link>
+          </li>
           <li className="topListItem">ABOUT</li>
           <li className="topListItem">CONTACT</li>
-          <li className="topListItem">WRITE</li>
-          <li className="topListItem">lOGOUT</li>
+          <li className="topListItem">
+            <Link className="link" to="/write">
+              WRITE
+            </Link>
+          </li>
+          {user && <li className="topListItem">LOGOUT</li>}
         </ul>
       </div>
-      {/* <div className="topCenter">
-        <Link to={"/"}>Home</Link>
-      </div> */}
       <div className="topRight">
-        <img
-          className="topImg"
-          src="https://images.pexels.com/photos/1759530/pexels-photo-1759530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-        />
-        {/* <ul className="topList">
+        {user ? (
+          <Link className="link" to="/settings">
+            <img
+              className="topImg"
+              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              alt=""
+            />
+          </Link>
+        ) : (
+          <ul className="topList">
             <li className="topListItem">
               <Link className="link" to="/login">
                 LOGIN
@@ -40,7 +47,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-        )} */}
+        )}
         <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>

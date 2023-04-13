@@ -19,7 +19,7 @@ function Post({ img }) {
           </span>
         </div>
         <span className="postTitle">
-          <Link to="/post/abc" className="link">
+          <Link to="/Post/abc" className="link">
             The Universal Language of Music: Its Power to Connect, Heal, and
             Inspire
           </Link>

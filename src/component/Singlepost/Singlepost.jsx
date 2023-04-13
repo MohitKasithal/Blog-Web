@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Singlepost.css";
 
-export default function SinglePost() {
+function SinglePost() {
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
@@ -13,9 +13,7 @@ export default function SinglePost() {
         <h1 className="singlePostTitle">
           Lorem ipsum dolor
           <div className="singlePostEdit">
-            <i className="singlePostIcon far fa-edit" style>
-              {" "}
-            </i>
+            <i className="singlePostIcon far fa-edit"> </i>
             <i className="singlePostIcon far fa-trash-alt"> </i>
           </div>
         </h1>
@@ -50,7 +48,7 @@ export default function SinglePost() {
           <br />
           <br />
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error
-          quibusdam ipsa quis quidem doloribus eos, dolore ea iusto impedit!
+          quibusdam ipsa quis qu;idem doloribus eos, dolore ea iusto impedit!
           Voluptatum necessitatibus eum beatae, adipisci voluptas a odit modi
           eos! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
           error quibusdam ipsa quis quidem doloribus eos, dolore ea iusto
@@ -64,3 +62,4 @@ export default function SinglePost() {
     </div>
   );
 }
+export default SinglePost;

@@ -11,7 +11,7 @@ function Register() {
   function handleRegister() {
     const data = { email, password, userName };
 
-    localStorage.setItem("uaser-info", data);
+    localStorage.setItem("user-info", JSON.stringify(data));
     console.log(data);
     navigate("/");
   }
@@ -28,6 +28,7 @@ function Register() {
         <input
           className="registerInput"
           type="text"
+          required
           placeholder="Enter your username..."
           value={userName}
           onChange={(e) => setuserName(e.target.value)}
@@ -36,6 +37,7 @@ function Register() {
         <input
           className="registerInput"
           type="text"
+          required
           placeholder="Enter your email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -44,6 +46,7 @@ function Register() {
         <input
           className="registerInput"
           type="password"
+          required
           placeholder="Enter your password..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}

@@ -3,14 +3,15 @@ import "./Navbar.css";
 import { useEffect, useState } from "react";
 
 function Navbar() {
-  const [userData, setUserData] = useState(true);
+  const [userData, setUserData] = useState(false);
   const navigate = useNavigate();
   const data = localStorage.getItem("user-info");
+  console.log(data);
 
   function handleLogout() {
     localStorage.clear();
     navigate("/login");
-    setUserData(!true);
+    setUserData(false);
   }
   useEffect(() => {
     if (data) {
@@ -75,93 +76,3 @@ function Navbar() {
   );
 }
 export default Navbar;
-
-/**
- *   <ul className="topList">
-          <li className="topListItem">
-            <Link className="link" to="/">
-              HOME
-            </Link>
-          </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
-          <li className="topListItem">
-            <Link className="link" to="/write">
-              WRITE
-            </Link>
-          </li>
-          {user && <li className="topListItem">LOGOUT</li>}
-        </ul>
-      </div>
-      <div className="topRight">
-        {user ? (
-          <Link className="link" to="/settings">
-            <img
-              className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
-          </Link>
-        ) : (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
-            </li>
-            <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
-            </li>
-          </ul>
-        )}
-
-
-          {user ? (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link className="link" to="/">
-                HOME
-              </Link>
-            </li>
-            <li className="topListItem">ABOUT</li>
-            <li className="topListItem">CONTACT</li>
-            <li className="topListItem">
-              <Link className="link" to="/write">
-                WRITE
-              </Link>
-            </li>
-
-            <li
-              className="topListItem"
-              onClick={() => {
-                LOGOUT();
-              }}>
-              LOGOUT
-            </li>
-
-            <Link className="link" to="/settings">
-              <img
-                className="topImg"
-                src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt=""
-              />
-            </Link>
-          </ul>
-        ) : (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
-            </li>
-            <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
-            </li>
-          </ul>
-        )}
- */
-// how to set form details to localstorage with   localStorage.setItem?

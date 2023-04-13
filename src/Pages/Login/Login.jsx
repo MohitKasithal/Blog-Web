@@ -9,7 +9,7 @@ function Login() {
 
   function handleLogin(e) {
     const data = { email, password };
-    localStorage.setItem("uaser-info", data);
+    localStorage.setItem("user-info", JSON.stringify(data));
     console.log(data);
     navigate("/");
   }
@@ -30,6 +30,7 @@ function Login() {
         <input
           className="loginInput"
           type="text"
+          required
           placeholder="Enter your email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -38,6 +39,7 @@ function Login() {
         <input
           className="loginInput"
           type="password"
+          required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter your password..."

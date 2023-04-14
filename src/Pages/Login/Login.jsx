@@ -13,11 +13,15 @@ function Login() {
     console.log(data);
     navigate("/");
   }
-  useEffect(() => {
-    if (localStorage.getItem("user-info")) {
-      navigate("/ ");
-    }
-  }, []);
+  useEffect(
+    () => {
+      if (localStorage.getItem("user-info")) {
+        navigate("/ ");
+      }
+    },
+    // eslint-disable-next-line
+    []
+  );
   return (
     <div className="login">
       <span className="loginTitle">Login</span>

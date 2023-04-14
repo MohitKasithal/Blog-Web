@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "./component/Navbar";
-import Homepage from "./Pages/Homepage/Homepage";
+// import Homepage from "./Pages/Homepage/Homepage";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/register/Register";
 import Settings from "./Pages/settings/Settings";
@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/Home/Home";
 
 function App() {
+  // eslint-disable-next-line
   const [currentUser, setcurrentUser] = useState(true);
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
             element={currentUser ? <Write /> : <Register />}
           />
           <Route
-            path="/setting"
+            path="/settings"
             element={currentUser ? <Settings /> : <Register />}
           />
           <Route path="/post/:id" element={<Single />} />
@@ -36,8 +37,7 @@ function App() {
 
 export default App;
 
-{
-  /* <Route exact path="/" element={<Home />} />
+/* <Route exact path="/" element={<Home />} />
 
 <Route path="/posts" element={<Homepage />} />
 <Route
@@ -55,4 +55,3 @@ export default App;
   path="/settings"
   element={currentUser ? <Settings /> : <Login />}
 /> */
-}

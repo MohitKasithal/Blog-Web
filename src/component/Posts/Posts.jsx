@@ -1,4 +1,3 @@
-/*
 import React from "react";
 import "./Posts.css";
 import Post from "../Post/Post";
@@ -15,8 +14,8 @@ function Posts() {
   );
 }
 
-export default Posts;*/
-
+export default Posts;
+/*
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -44,3 +43,4 @@ function Posts() {
 }
 
 export default Posts;
+*/

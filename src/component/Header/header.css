@@ -30,3 +30,11 @@
   height: 450px;
   object-fit: cover;
 }
+@media (max-width: 700px) {
+  .headerTitleLg {
+    font-size: 45px;
+  }
+  .headerTitleSm {
+    font-size: 15px;
+  }
+}

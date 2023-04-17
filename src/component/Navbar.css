@@ -11,7 +11,7 @@
 }
 .topLeft,
 .topRight {
-  flex: 3;
+  flex: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,4 +66,20 @@
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
+}
+@media (max-width: 700px) {
+  .topLeft h1 {
+    font-size: 18px;
+  }
+  .topListItem {
+    font-size: 15px;
+  }
+  .userD {
+    display: none;
+  }
+  .topCenter {
+    padding: 0;
+  }
+}
+@media (max-width: 470px) {
 }

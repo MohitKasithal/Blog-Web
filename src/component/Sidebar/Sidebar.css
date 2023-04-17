@@ -59,8 +59,19 @@
   align-items: center;
   justify-content: center;
 }
-
+.sidebarItem {
+  width: 100%;
+}
 .sidebarIcon {
   font-size: 16px;
   margin-left: 10px;
+}
+@media (max-width: 700) {
+  .sidebarList {
+    text-align: center;
+    padding: 0;
+  }
+  .sidebarItem {
+    width: 100%;
+  }
 }

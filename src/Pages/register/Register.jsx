@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -12,7 +12,10 @@ import { Typography } from "@mui/material";
 
 //  validations
 const schema = yup.object().shape({
-  userName: yup.string().required("Username is required"),
+  userName: yup
+    .string()
+    .required("Username is required")
+    .min(3, " username must be at least 3 characters long"),
   email: yup
     .string()
     .email("Email must be a valid email")
@@ -22,6 +25,7 @@ const schema = yup.object().shape({
     .required("Password is required")
     .min(8, "Password must be at least 8 characters long"),
 });
+//  components
 
 const backgroundImage =
   "https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
@@ -56,19 +60,29 @@ const RegisterForm = styled("form")({
 const RegisterButton = styled(Button)({
   marginTop: "16px",
 });
+const RegisterError = styled(Typography)(({ theme }) => ({
+  color: theme.palette.error.main,
+  fontWeight: "bold",
+  marginBottom: "1rem",
+}));
 
 function Register() {
   const navigate = useNavigate("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setuserName] = useState("");
+  // eslint-disable-next-line
   const [error, setError] = useState("");
+  useEffect(
+    () => {
+      if (localStorage.getItem("user-info")) {
+        navigate("/ ");
+      }
+    },
+    // eslint-disable-next-line
+    []
+  );
 
-  const onSubmit = (data) => {
-    localStorage.setItem("user-info", JSON.stringify(data));
-    console.log(data);
-    navigate("/");
-  };
   const {
     register,
     handleSubmit,
@@ -76,15 +90,17 @@ function Register() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const RegisterError = styled(Typography)(({ theme }) => ({
-    color: theme.palette.error.main,
-    fontWeight: "bold",
-    marginBottom: "1rem",
-  }));
+  const handleReg = (data) => {
+    // const data = { userName, email, password };
+    localStorage.setItem("user-info", JSON.stringify(data));
+    console.log(data);
+    navigate("/");
+  };
+
   return (
     <RegisterBox>
       <Container maxWidth="xs">
-        <RegisterForm onSubmit={handleSubmit(onSubmit)}>
+        <RegisterForm onSubmit={handleSubmit(handleReg)}>
           <Box textAlign="center">
             <h1>Register</h1>
           </Box>

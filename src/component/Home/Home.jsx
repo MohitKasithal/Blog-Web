@@ -17,13 +17,11 @@ const HomeContainer = styled("div")(({ theme }) => ({
 
 const HomeContent = styled("div")(({ theme }) => ({
   display: "flex",
-  // flexDirection: "column",
   flex: "9",
   alignItems: "center",
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     width: "100%",
-    // padding: theme.spacing(3),
   },
 }));
 

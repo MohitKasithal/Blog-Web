@@ -6,22 +6,24 @@ import Posts from "../Posts/Posts";
 
 const HomeContainer = styled("div")(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
   padding: "10px",
-
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
   [theme.breakpoints.up("sm")]: {
-    flexDirection: "row",
+    flexDirection: "  row   ",
   },
 }));
 
 const HomeContent = styled("div")(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
+  // flexDirection: "column",
+  flex: "9",
   alignItems: "center",
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    width: "75%",
-    padding: theme.spacing(3),
+    width: "100%",
+    // padding: theme.spacing(3),
   },
 }));
 

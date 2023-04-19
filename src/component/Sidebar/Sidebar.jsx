@@ -80,7 +80,7 @@ const SidebarContainer = styled("div")(({ theme }) => ({
   display: "flex",
   backgroundColor: " #f9f9f9",
   borderRadius: "10px",
-  marginTop: "24px",
+  margin: " 0px 6px",
   flexDirection: "column",
   alignItems: "center",
 }));

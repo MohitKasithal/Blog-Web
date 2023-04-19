@@ -5,7 +5,7 @@ import { styled } from "@mui/system";
 import { AppBar, Box, ListItem, Typography } from "@mui/material";
 
 const BarTop = styled(AppBar)({
-  backgroundColor: "WHITE",
+  backgroundColor: "#dcdcdc66",
   color: "#000",
   display: "flex",
   alignItems: "center",

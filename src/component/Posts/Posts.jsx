@@ -15,32 +15,3 @@ function Posts() {
 }
 
 export default Posts;
-/*
-import { useState, useEffect } from "react";
-import axios from "axios";
-
-function Posts() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/blog").then((response) => {
-      setPosts(response.data);
-      console.log(response, "<<<");
-    });
-  }, []);
-
-  return (
-    <div>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-          <img src={`http://localhost:8000/${post.image}`} alt={post.title} />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export default Posts;
-*/

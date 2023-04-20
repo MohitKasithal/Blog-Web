@@ -90,8 +90,8 @@ function Register() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const handleReg = (data) => {
-    // const data = { userName, email, password };
+  const handleReg = () => {
+    const data = { userName, email, password };
     localStorage.setItem("user-info", JSON.stringify(data));
     console.log(data);
     navigate("/");
@@ -100,7 +100,7 @@ function Register() {
   return (
     <RegisterBox>
       <Container maxWidth="xs">
-        <RegisterForm onSubmit={handleSubmit(handleReg)}>
+        <RegisterForm onSubmit={handleReg}>
           <Box textAlign="center">
             <h1>Register</h1>
           </Box>

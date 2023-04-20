@@ -111,9 +111,6 @@ function Navbar() {
                     alt=""
                   />
                 </Link>
-
-                <Typography variant="p">{user && user.userName}</Typography>
-                {/* <i className="topSearchIcon fas fa-search"></i> */}
               </Box>
             </LinkList>
           </LinkBox>

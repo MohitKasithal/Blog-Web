@@ -146,13 +146,18 @@ const SidebarLink = styled(Link)(({ theme }) => ({
 const SidebarSocial = styled(Stack)(({ theme }) => ({
   marginTop: "15px",
   width: "  80% ",
-  margin: "0px auto",
-  display: " block",
-  // flexDiraction: "row",
+  // margin: "0px auto",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
 }));
 
-const SidebarIcon = styled("span")(({ theme }) => ({
+const SidebarIcon = styled("div")(({ theme }) => ({
   margin: "0px 10px",
+  width: "10%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   cursor: "pointer",
   transition: "all 0.3s ease",
   "&:hover": {

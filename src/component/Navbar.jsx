@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
 import { useEffect, useState } from "react";
 import { styled } from "@mui/system";
 import { AppBar, Box, ListItem, Typography } from "@mui/material";
@@ -59,9 +58,15 @@ function Navbar() {
                   padding: { xs: "0px 10px", md: "0px 5px", lg: "20px" },
                   fontSize: { xs: "12px", sm: "18px" },
                 }}>
-                <Link className="link" to="/">
-                  HOME
-                </Link>
+                {userData ? (
+                  <Link className="link" to="/">
+                    HOME
+                  </Link>
+                ) : (
+                  <Link className="link" to="/login">
+                    login
+                  </Link>
+                )}
               </ListItem>
               <ListItem
                 sx={{

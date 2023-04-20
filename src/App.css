@@ -14,3 +14,13 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.topImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.single {
+  display: flex;
+}

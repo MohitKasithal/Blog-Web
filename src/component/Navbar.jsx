@@ -28,7 +28,6 @@ function Navbar() {
   const [userData, setUserData] = useState(false);
   const navigate = useNavigate("");
   const data = localStorage.getItem("user-info");
-  const user = JSON.parse(localStorage.getItem("user-info"));
 
   function handleLogout() {
     localStorage.clear();

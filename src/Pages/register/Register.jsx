@@ -85,7 +85,6 @@ function Register() {
 
   const {
     register,
-
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -93,7 +92,6 @@ function Register() {
   const handleReg = () => {
     const data = { userName, email, password };
     localStorage.setItem("user-info", JSON.stringify(data));
-    console.log(data);
     navigate("/");
   };
 

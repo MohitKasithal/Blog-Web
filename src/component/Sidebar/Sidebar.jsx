@@ -121,8 +121,6 @@ const SidebarList = styled("ul")(({ theme }) => ({
   marginTop: "20px",
   textAlign: "center",
   width: "100%",
-  // display: "flex",
-  // justifyContent: "center",
   margin: "10px",
 }));
 
@@ -146,7 +144,6 @@ const SidebarLink = styled(Link)(({ theme }) => ({
 const SidebarSocial = styled(Stack)(({ theme }) => ({
   marginTop: "15px",
   width: "  80% ",
-  // margin: "0px auto",
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
